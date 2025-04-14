@@ -1,0 +1,32 @@
+﻿@model CIS411Assignment3.Models.Artwork
+
+@{
+    ViewData["Title"] = "Artwork Details";
+}
+
+<!-- Back button to return to Index view -->
+<form asp-action="Index" method="get">
+    <button type="submit">Back to Search</button>
+</form>
+<!-- Search form to perform a new search without needing to go back to Index view -->
+<form asp-action="Search" method="post">
+    <input type="text" name="query" placeholder="Enter artwork name..." required />
+    <button type="submit">Search</button>
+</form>
+
+@if (Model != null)
+{
+    <h2>@Model.title</h2>
+    <p><strong>Artist:</strong> @Model.artist_title</p>
+    <p><strong>Medium:</strong> @Model.medium_display</p>
+    <p><strong>Date:</strong> @Model.date_display</p>
+
+    @if (!string.IsNullOrEmpty(Model.image_id))
+    {
+        <img src="https://www.artic.edu/iiif/2/@Model.image_id/full/843,/0/default.jpg" alt="@Model.title" />
+    }
+}
+else
+{
+    <p>No artwork found.</p>
+}
