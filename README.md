@@ -53,7 +53,6 @@ The application interacts with the Chicago Institute of Art's public API. The en
 1. Clone the repository to your local machine:
    ```bash
    git clone https://github.com/imkappy/chicago-art-explorer.git
-   Open the project in Visual Studio.
 2. Open the project in Visual Studio.
 3. Build and run the application.
 4. Navigate to the home page to start searching for artworks.
